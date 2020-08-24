@@ -1,0 +1,25 @@
+.row-header{
+    margin: 0px auto;
+    padding: 0px auto;
+}
+
+.row-content {
+    margin: 0px auto;
+    padding: 50px 0 50px 0;
+    border-bottom: 1px solid lightgrey;
+    min-height: 400px;
+}
+
+.jumbotron {
+    border-radius: 0px;
+}
+
+.footer {
+    margin: 0px auto;
+    padding: 20px 0 20px 0;
+}
+
+.address {
+    font-size: 80%;
+    margin: 0px;
+}
