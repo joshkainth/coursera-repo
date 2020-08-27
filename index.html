@@ -35,10 +35,117 @@
                                 class="fa fa-phone fa-lg"></span> Contact</a></li>
 
                 </ul>
+                <span class="navbar-text">
+                    <a href="#" id="login" data-toggle="modal" data-target="#loginModal">
+                        <span class="fa fa-sign-in"></span> Login
+                    </a>
+                </span>
             </div>
         </div>
     </nav>
-
+    <div class="modal fade" id="loginModal" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header bg-secondary text-white">
+                    <h4 class="modal-title">Login</h4>
+                    <button type="button" class="close dismissLogin" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                                <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3"
+                                    placeholder="Enter email">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="exampleInputPassword3">Password</label>
+                                <input type="password" class="form-control form-control-sm mr-1"
+                                    id="exampleInputPassword3" placeholder="Password">
+                            </div>
+                            <div class="col-sm-auto">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label"> Remember me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto dismissLogin">Cancel</button>
+                            <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="reserve" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header bg-secondary text-white">
+                    <h4 class="modal-title">Reserve a Table</h4>
+                    <button type="button" class="close dismissReserve" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <dl class="row">
+                        <dt class="col-12 col-sm-3 col-lg-2 mb-3">Number Of Guests</dt>
+                        <dd class="col-auto">
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="1" name="noOfGuests" class="custom-control-input">
+                                <label class="custom-control-label" for="1">1</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="2" name="noOfGuests" class="custom-control-input">
+                                <label class="custom-control-label" for="2">2</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="3" name="noOfGuests" class="custom-control-input">
+                                <label class="custom-control-label" for="3">3</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="4" name="noOfGuests" class="custom-control-input">
+                                <label class="custom-control-label" for="4">4</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="5" name="noOfGuests" class="custom-control-input">
+                                <label class="custom-control-label" for="5">5</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="6" name="noOfGuests" class="custom-control-input">
+                                <label class="custom-control-label" for="6">6</label>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="row">
+                        <dt class="col-12 col-sm-2 mb-3">Section</dt>
+                        <dd class="col-auto">
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-success active">
+                                    <input type="radio" name="options" id="option1" autocomplete="off" checked>
+                                    Non-Smoking
+                                </label>
+                                <label class="btn btn-danger">
+                                    <input type="radio" name="options" id="option2" autocomplete="off"> Smoking
+                                </label>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="row">
+                        <dt class="col-12 col-sm-2 mb-3">Date And Time</dt>
+                        <dd class="col-auto d-sm-flex d-block">
+                            <input type="text" name="" id="" class="form-control" placeholder="Date">
+                            <input type="text" name="" id="" class="form-control ml-sm-3" placeholder="Time">
+                        </dd>
+                    </dl>
+                    <dl class="row">
+                        <dt class="offset-sm-2 mr-3"><button type="button" class="btn btn-secondary offset-2 dismissReserve">Cancel</button></dt>
+                        <dt><button class="btn btn-primary">Reserve</button></dt>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
     <header class="jumbotron bg-dark text-white">
         <div class="container">
             <div class="row row-header">
@@ -50,14 +157,72 @@
                 <div class="col-12 col-sm-4 text-center align-self-center">
                     <img class="img-fluid" src="assets/images/logo.png" alt="Ristorante con Fusion">
                 </div>
-                <div class="col-12 col-sm text-center align-self-center">
-                    <a type="button" class="btn btn-warning col-12 text-center" href="#reserveTable"><h5>Reserve Table</h5></a>
+                <div class="col-12 col-sm text-center align-self-center" id="reserveTable">
+                    <a type="button" class="btn btn-warning col-12 text-center" href="#" data-toggle="modal" data-target="#reserve"><h5>Reserve Table</h5></a>
                 </div>
             </div>
         </div>
     </header>
 
     <div class="container">
+        <div class="row row-content">
+            <div class="col">
+                <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active  bg-dark">
+                            <img src="./assets/images/uthappizza.png" alt="Uthappizza" class="d-block img-fluid">
+                            <div class="carousel-caption d-none d-md-block mb-5">
+                                <h2 class="mt-0">Uthappizza <span class="badge badge-danger">HOT</span> <span
+                                        class="badge badge-pill badge-secondary">$4.99</span></h2>
+                                <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and
+                                    Italian pizza, topped with Cerignola olives, ripe vine
+                                    cherry tomatoes, Vidalia onion, Guntur chillies and
+                                    Buffalo Paneer.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item bg-dark">
+                            <img src="./assets/images/buffet.png" alt="Uthappizza" class="d-block img-fluid">
+                            <div class="carousel-caption d-none d-md-block mb-5">
+                                <h2 class="mt-0">Weekend Grand Buffet <span class="badge badge-danger">NEW</span> </h2>
+                                <p class="d-none d-sm-block">Featuring mouthwatering combinations with a choice of five
+                                    different salads, six enticing
+                                    appetizers,
+                                    six main entrees and five choicest desserts. Free flowing bubbly and soft drinks.
+                                    All for
+                                    just
+                                    $19.99 per person </p>
+                            </div>
+                        </div>
+                        <div class="carousel-item bg-dark">
+                            <img src="./assets/images/alberto.png" alt="Uthappizza" class="d-block img-fluid">
+                            <div class="carousel-caption d-none d-md-block mb-5">
+                                <h2 class="mt-0">Alberto Somayya</h2>
+                                <h4>Executive Chef</h4>
+                                <p class="d-none d-sm-block">Award winning three-star Michelin chef with wide
+                                    International experience having worked closely with
+                                    whos-who in the culinary world, he specializes in
+                                    creating mouthwatering Indo-Italian fusion experiences.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <ol class="carousel-indicators">
+                        <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#mycarousel" data-slide-to="1"></li>
+                        <li data-target="#mycarousel" data-slide-to="2"></li>
+                    </ol>
+                    <a href="#mycarousel" role="button" data-slide="prev" class="carousel-control-prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a href="#mycarousel" role="button" data-slide="next" class="carousel-control-next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                    <button class="btn btn-danger btn-sm" id="carouselButton">
+                        <span class="fa fa-pause"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
         <div class="row row-content">
             <div class="col-12 col-sm-4 col-md-3 order-sm-last">
                 <h3>Our Lipsmacking Culinary Creations</h3>
@@ -112,57 +277,9 @@
             </div>
         </div>
 
-        <div class="row row-content" id="reserveTable">
-            <div class="col-12 col-sm-8 mx-auto">
-                <div class="card">
-                    <div class="card-header bg-warning text-white text-lg"><h2><strong>Reserve a Table</strong></h2></div>
-                    <div class="card-body">
-                        <form>
-                            <div class="form-group row pr-2 pl-1">
-                                <lable for="guestsCount" class="col-md-3 p-0">Number of Guests</lable>
-                                
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" id="1" name="noOfGuests" class="custom-control-input">
-                                    <label class="custom-control-label" for="1">1</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" id="2" name="noOfGuests" class="custom-control-input">
-                                    <label class="custom-control-label" for="2">2</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" id="3" name="noOfGuests" class="custom-control-input">
-                                    <label class="custom-control-label" for="3">3</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" id="4" name="noOfGuests" class="custom-control-input">
-                                    <label class="custom-control-label" for="4">4</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" id="5" name="noOfGuests" class="custom-control-input">
-                                    <label class="custom-control-label" for="5">5</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" id="6" name="noOfGuests" class="custom-control-input">
-                                    <label class="custom-control-label" for="6">6</label>
-                                </div>
-                        
-                            </div>
-                            <div class="form-group row">
-                                <lable for="dateTime" class="col-md-3 p-0">Date and Time</lable>
-                                <input type="date" class="form-control col-md-3 ml-1 mr-1" id="date" name="dateTime" placeholder="Enter Date">
-                                <input type="time" class="form-control col-md-3 ml-1 mr-1" id="time" name="dateTime" placeholder="Enter time">
-                            </div>
-                            <div class="row">
-                                <div class="offset-sm-3 mr-3">
-                                    <button type="button" class="btn btn-primary btn-lg">Reserve</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+        
             <!-- <div class="col-12 col-sm"></div> -->
-        </div>
+       
     </div>
 
     <footer class="footer bg-dark text-white">
@@ -207,15 +324,10 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>
